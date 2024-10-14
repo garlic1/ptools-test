@@ -1,0 +1,60 @@
+* {
+    --header-color: rgb(45, 62, 80);
+    --button-color: rgb(53, 152, 219);
+    --button-selected: rgb(230, 78, 52);
+    --background-color: rgb(240, 240, 240);
+    --shadow-effect: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+header, footer {
+    background-color: var(--header-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5vh;
+}
+body {
+    background-color: var(--background-color);
+    margin: 0;
+}
+.button {
+    background-color: var(--button-color);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin: 10px;
+    border-style: none;
+}
+.button.selected {
+    background-color: var(--button-selected);
+}
+.main-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    max-height: 90vh;
+    overflow: auto;
+}
+canvas {
+    border: 1px solid black;
+    background-size: cover;
+    box-shadow: var(--shadow-effect);
+}
+.button.navigation {
+    background-color: var(--button-color);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin: 10px 5px;
+    border-style: none;
+}
+.pagination {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--button-color);
+    border-radius: 5px;
+    padding: 5px 20px;
+    margin: 10px 5px;
+}

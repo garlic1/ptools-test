@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoom Canvas Example</title>
+  <script type="text/javascript" src="./pagination.js" defer></script>
+  <script type="text/javascript" src="./canvas.js" defer></script>
+  <script type="text/javascript" src="./api.js" defer></script>
+  <script>
+    window.onload = async function() {
+      rectangles = JSON.parse(localStorage.getItem("rectangles")) ?? Array.from({ length: pagination.maxPages }, () => []);
+      updateRectanglesArray(1);
+      await fetchPage(1);
+      redrawCanvas();
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="root">
+  <header>
+    <button class="button" id="drawModeButton" onclick="activateDrawMode()">
+      Ativar Modo de Desenho
+    </button>
+  </header>
+  <section class="main-section">
+    <canvas id="myCanvas"></canvas>
+  </section>
+  <footer>
+    <button class="button navigation" onclick="pagination.previousTenPages()"><</button>
+    <button class="button navigation" onclick="pagination.previousPage()"><<</button>
+    <div class="pagination" id="pagination"></div>
+    <button class="button navigation" onclick="pagination.nextPage()">>></button>
+    <button class="button navigation" onclick="pagination.nextTenPages()">></button>
+  </footer>
+</body>
+</html>
