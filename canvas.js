@@ -72,11 +72,9 @@ canvas.addEventListener("mouseup", function (event) {
 
     const { x, y } = event;
     const bounds = canvas.getBoundingClientRect();
-    console.log('x, y', x - bounds.left, y - bounds.top);
     if (isSelecting) {
         isSelecting = false;
         if (Math.abs((x - bounds.left) - initialCoordinates.x) > 1 && Math.abs((y - bounds.top) - initialCoordinates.y) > 1) {
-            console.log("saved");
             rectangle = new Rectangle(
                 initialCoordinates.x / scaleFactor, 
                 initialCoordinates.y / scaleFactor, 
